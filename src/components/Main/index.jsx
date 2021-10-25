@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useLocalStorage } from '../../utils/hooks';
 import { CardsList, FilterForm } from '..';
-import { ADDITEMSNUMBER, ITEMSSHOWNINIT } from '../../utils/constants';
+import { ADDITEMSNUMBER, FILTER_SENSITIVITY, ITEMSSHOWNINIT } from '../../utils/constants';
 import ChevronIcon from '../Icons/ChevronIcon';
 import './styles.css';
 
@@ -24,7 +24,7 @@ const Main = ({ aptsList }) => {
   }, [apartments, itemsShown])
 
   const filterMemoCb = useCallback((text) => {
-    if (text.length < 3) {
+    if (text.length < FILTER_SENSITIVITY) {
       setApartments(aptsList);
     } else {
       const filteredApts = apartments

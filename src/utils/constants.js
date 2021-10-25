@@ -7,3 +7,5 @@ export const SUPP_APT = 'SupportAvailable';
 export const ITEMSSHOWNINIT = 6;
 // number of cards shown on btn click
 export const ADDITEMSNUMBER = 3;
+// filter sensitivity
+export const FILTER_SENSITIVITY = 3;
