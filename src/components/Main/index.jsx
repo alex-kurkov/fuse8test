@@ -28,7 +28,7 @@ const Main = ({ aptsList }) => {
       setApartments(aptsList);
     } else {
       const filteredApts = apartments
-        .filter(item => item.title.slice(0, text.length).toLowerCase() === text.toLowerCase());
+        .filter(item => item.title.toLowerCase().indexOf(text.toLowerCase()) !== -1);
       setApartments(filteredApts);
     }
   }, [ filterText, aptsList ])
