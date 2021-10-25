@@ -1,0 +1,31 @@
+.cards-list {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cards-list__item {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cards-list__link {
+  text-decoration: none;
+  color: var(--text-primary, black);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1199px) {
+  .cards-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .cards-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+
+}

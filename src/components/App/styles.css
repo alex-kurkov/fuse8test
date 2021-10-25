@@ -1,0 +1,35 @@
+.app {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.app__title {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  text-align: center;
+  color: var(--title-color, green);
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 1199px) {
+  .app__title {
+    font-size: 32px;
+    padding: 0 8px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .app__title {
+    
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .app__title {
+    font-size: 24px;
+    padding: 0 4px;
+  }
+}

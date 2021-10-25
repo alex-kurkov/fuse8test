@@ -1,0 +1,89 @@
+.card {
+  width: 100%;
+  min-height: 380px;
+  border: solid thin var(--border-color, light-grey);
+  transition: box-shadow 0.2s ease;
+  display: grid;
+}
+
+.card:hover {
+  box-shadow: 0 0 2px 2px var(--border-color);
+}
+
+.card__imageWrap {
+  width: 100%;
+  padding-bottom: 60%;
+  position: relative;
+}
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card__label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: fit-content;
+  height: 30px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--text-secondary, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.card__label_type_indie {
+  background-color: var(--label-accent-indie, blue);
+}
+.card__label_type_avail {
+  background-color: var(--label-accent-avail, orange);
+}
+.card__info {
+  padding: 20px;
+  overflow: hidden;
+}
+.card__text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+.card__title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0 0 4px 0; 
+}
+
+.card__address {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0 0 16px 0; 
+}
+
+.card__price {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;  
+  margin: 0 0 8px 0; 
+}
+
+.card__price_type_emphasised {
+  font-weight: 700;
+}
+.card__ownership-info {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;  
+  margin: 0; 
+}
