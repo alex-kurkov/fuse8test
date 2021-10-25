@@ -87,3 +87,35 @@
   font-weight: 400;  
   margin: 0; 
 }
+@media screen and (max-width: 767px) {
+  .card {
+    min-height: none;
+  }
+  .card__text {
+    white-space: normal;
+    text-overflow: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .card__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .card__address {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 0 8px 0; 
+  }
+  
+  .card__price {
+    font-size: 16px;
+    font-weight: 400;  
+    margin: 0 0 4px 0; 
+  }
+  
+  .card__ownership-info {
+    font-size: 12px;
+  }
+}
