@@ -3,6 +3,7 @@
   align-items: center;
   gap: 16px;
   justify-content: flex-start;
+  margin-bottom: 45px;
 }
 .filter-form__legend {
   font-family: 'Open Sans', sans-serif;
@@ -35,6 +36,7 @@
 @media screen and (max-width: 1199px) {
   .filter-form {
     padding: 0 8px;
+    margin-bottom: 16px;
   }
 }
 @media screen and (max-width: 480px) {
