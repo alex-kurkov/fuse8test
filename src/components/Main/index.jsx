@@ -1,18 +1,18 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useLocalStorage } from '../../utils/hooks';
 import { CardsList, FilterForm } from '..';
-import { ADDITEMSNUMBER, FILTER_SENSITIVITY, ITEMSSHOWNINIT } from '../../utils/constants';
+import { ADD_ITEMS_NUMBER, FILTER_SENSITIVITY, ITEMS_SHOWN_INIT } from '../../utils/constants';
 import ChevronIcon from '../Icons/ChevronIcon';
 import './styles.css';
 
 const Main = ({ aptsList }) => {
   const [ apartments, setApartments ] = useState([]);
   const [ filterText, setFilterText ] = useLocalStorage('filterText', '');
-  const [itemsShown, setItemsShown] = useState(ITEMSSHOWNINIT);
+  const [itemsShown, setItemsShown] = useState(ITEMS_SHOWN_INIT);
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const addCards = () => {
-    setItemsShown(itemsShown + ADDITEMSNUMBER);
+    setItemsShown(itemsShown + ADD_ITEMS_NUMBER);
   };
 
   const checkButtonState = useCallback(() => {
