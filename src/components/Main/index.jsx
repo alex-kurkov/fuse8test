@@ -51,7 +51,7 @@ const Main = ({ aptsList }) => {
       <FilterForm value={filterText} setValue={setFilterText}/>
       {!!apartments.length
         ? <CardsList apartments={apartments.slice(0, itemsShown)}/>
-        : <>no cards....</>
+        : <span className="main__status-text">no apartments found....</span>
       }
       <button 
         className={`main__button main__button_disabled_${buttonDisabled}`} 
