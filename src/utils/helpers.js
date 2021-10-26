@@ -11,3 +11,5 @@ export const enrichedApartments = aptsArray => aptsArray
     return { ...item, image };
   });
 
+export const getFilteredByStringArr = (targetArr, searchField, searchPhrase) => targetArr
+  .filter(item => item[searchField].toLowerCase().indexOf(searchPhrase.toLowerCase()) !== -1);

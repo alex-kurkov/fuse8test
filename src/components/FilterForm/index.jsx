@@ -6,7 +6,8 @@ const FilterForm = ({ value, setValue }) => {
   return (
     <form onSubmit={(e) => e.preventDefault()} className="filter-form" aria-label="Filter form">
       <label htmlFor="filter" className="filter-form__label">Filter</label>
-      <input 
+      <input
+        name="filter text"
         id="filter"
         className="filter-form__input" 
         type="text"

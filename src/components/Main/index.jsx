@@ -1,7 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useLocalStorage } from '../../utils/hooks';
-import { CardsList, FilterForm } from '..';
+import { getFilteredByStringArr } from '../../utils/helpers';
 import { ADD_ITEMS_NUMBER, FILTER_SENSITIVITY, ITEMS_SHOWN_INIT } from '../../utils/constants';
+import { CardsList, FilterForm } from '..';
 import ChevronIcon from '../Icons/ChevronIcon';
 import './styles.css';
 
@@ -23,16 +24,16 @@ const Main = ({ aptsList }) => {
     }
   }, [apartments, itemsShown])
 
-  const filterMemoCb = useCallback(() => {
+
+  const filterMemoCb = () => {
     console.log('text: ', filterText)
     if (filterText.length < FILTER_SENSITIVITY) {
       setApartments(aptsList);
     } else {
-      const filteredApts = apartments
-        .filter(item => item.title.toLowerCase().indexOf(filterText.toLowerCase()) !== -1);
+      const filteredApts = getFilteredByStringArr(apartments, 'title', filterText)
       setApartments(filteredApts);
     }
-  }, [ filterText, aptsList, apartments ])
+  };
 
   useEffect(() => {
     checkButtonState();
