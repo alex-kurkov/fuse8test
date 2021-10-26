@@ -4,9 +4,10 @@ import './styles.css';
 const FilterForm = ({ value, setValue }) => {
   const handleChange = e => setValue(e.target.value);
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="filter-form">
-      <legend className="filter-form__legend">Filter</legend>
+    <form onSubmit={(e) => e.preventDefault()} className="filter-form" aria-label="Filter form">
+      <label htmlFor="filter" className="filter-form__label">Filter</label>
       <input 
+        id="filter"
         className="filter-form__input" 
         type="text"
         onChange={handleChange}

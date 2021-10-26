@@ -23,26 +23,27 @@ const Main = ({ aptsList }) => {
     }
   }, [apartments, itemsShown])
 
-  const filterMemoCb = useCallback((text) => {
-    if (text.length < FILTER_SENSITIVITY) {
+  const filterMemoCb = useCallback(() => {
+    console.log('text: ', filterText)
+    if (filterText.length < FILTER_SENSITIVITY) {
       setApartments(aptsList);
     } else {
       const filteredApts = apartments
-        .filter(item => item.title.toLowerCase().indexOf(text.toLowerCase()) !== -1);
+        .filter(item => item.title.toLowerCase().indexOf(filterText.toLowerCase()) !== -1);
       setApartments(filteredApts);
     }
-  }, [ filterText, aptsList ])
+  }, [ filterText, aptsList, apartments ])
 
   useEffect(() => {
     checkButtonState();
-  }, [itemsShown, apartments]);
+  }, [itemsShown, apartments, checkButtonState]);
 
   useEffect(() => {
     setApartments(aptsList)
   }, [aptsList]);
 
   useEffect(() => {
-    filterMemoCb(filterText);
+    filterMemoCb();
   }, [filterText]);
   
   return (
@@ -52,7 +53,14 @@ const Main = ({ aptsList }) => {
         ? <CardsList apartments={apartments.slice(0, itemsShown)}/>
         : <>no cards....</>
       }
-      <button className={`main__button main__button_disabled_${buttonDisabled}`} onClick={addCards}>See more...<ChevronIcon/></button>
+      <button 
+        className={`main__button main__button_disabled_${buttonDisabled}`} 
+        onClick={addCards}
+        aria-label="See more"
+      >
+          See more...
+          <ChevronIcon/>
+      </button>
     </main>
   )
 }
