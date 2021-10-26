@@ -26,7 +26,6 @@ const Main = ({ aptsList }) => {
 
 
   const filterMemoCb = () => {
-    console.log('text: ', filterText)
     if (filterText.length < FILTER_SENSITIVITY) {
       setApartments(aptsList);
     } else {
